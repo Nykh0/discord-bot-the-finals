@@ -47,9 +47,8 @@ module.exports = {
 				);
 
 				return interaction.reply({ embeds: [embed] });
-                //return interaction.reply(getName(player) + " est positionné à la place numero " + player.r + ".");
             } else {
-				return interaction.reply("Le joueur n'a pas été trouvé ou ne se situe pas dans le top 10000.");
+				return interaction.reply("This player does not exist or is not at least 10000th in the leaderboard.");
 			}
         });
 	},
