@@ -6,7 +6,7 @@ module.exports = {
 		.setDescription('Check THE FINALS player rank')
 		.addStringOption(option =>
 			option.setName("embark-id")
-				.setDescription('Nickname of the player').setRequired(true)),
+				.setDescription('Embark ID of the player (Format : Username#9999)').setRequired(true)),
 	async execute(interaction) {
 		fetch('https://storage.googleapis.com/embark-discovery-leaderboard/leaderboard-crossplay-discovery-live.json')
         .then(response => response.json())
