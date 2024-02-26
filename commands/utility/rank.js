@@ -8,6 +8,7 @@ module.exports = {
 			option.setName("embark-id")
 				.setDescription('Embark ID of the player (Format : Username#9999)').setRequired(true)),
 	async execute(interaction) {
+		await interaction.deferReply();
 		fetch('https://storage.googleapis.com/embark-discovery-leaderboard/leaderboard-crossplay-discovery-live.json')
         .then(response => response.json())
         .then(data => {
@@ -46,9 +47,9 @@ module.exports = {
 				{ name: 'Cashouts', value: cash, inline: true }, 
 				);
 
-				return interaction.reply({ embeds: [embed] });
+				return interaction.editReply({ embeds: [embed] });
             } else {
-				return interaction.reply("This player does not exist or is not at least 10000th in the leaderboard.");
+				return interaction.editReply("This player does not exist or is not at least 10000th in the leaderboard.");
 			}
         });
 	},
