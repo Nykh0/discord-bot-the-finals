@@ -36,16 +36,17 @@ module.exports = {
 				});
 				const cash = USDollar.format(player.c);
 
+				const fields = [{ name: 'Rank', value: player.r.toString(), inline: true },
+				{ name: 'League', value: player.nameRank, inline: true },
+				{ name: 'Fame', value: player.f.toString(), inline: true },
+				{ name: '24h', value: player.diff, inline: true },
+				{ name: 'Cashouts', value: cash, inline: true }];
+
 				const embed = new EmbedBuilder()
 				.setColor(0xd31f3c)
 				.setTitle(getName(player))
 				.setThumbnail("https://storage.googleapis.com/embark-discovery-leaderboard/img/thumbs/" + player.imgRankName)
-				.addFields({ name: 'Rank', value: player.r.toString(), inline: true },
-				{ name: 'League', value: player.nameRank, inline: true },
-				{ name: 'Fame', value: player.f.toString(), inline: true },
-				{ name: '24h', value: player.diff, inline: true },
-				{ name: 'Cashouts', value: cash, inline: true }, 
-				);
+				.addFields(fields);
 
 				return interaction.editReply({ embeds: [embed] });
             } else {
@@ -53,7 +54,7 @@ module.exports = {
 			}
         });
 	},
-}; //"https://storage.googleapis.com/embark-discovery-leaderboard/img/thumbs/" + player.imgRankName
+};
 
 function getFame(player) {
 	var rankName = "Bronze 4";
