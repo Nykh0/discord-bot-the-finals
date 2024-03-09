@@ -23,7 +23,7 @@ module.exports = {
                     player.diff = "-" + diff;
                 } else {
                     player.classDiff = "zero";
-                    player.diff = 0;
+                    player.diff = "0";
                 }
                 player.nameRank = getFame(player);
                 player.imgRankName = player.nameRank.toLowerCase().replace(" ", "-").concat("-thumb.png");
@@ -41,8 +41,6 @@ module.exports = {
 				{ name: 'Fame', value: player.f.toString(), inline: true },
 				{ name: '24h', value: player.diff, inline: true },
 				{ name: 'Cashouts', value: cash, inline: true }];
-
-				console.log('Rank : ' + player.r.toString() + '\nLeague : ' + player.nameRank + '\nFame :' + player.f.toString() + '\n24h: ' + player.diff + '\nCashouts : ' + cash);
 
 				const embed = new EmbedBuilder()
 				.setColor(0xd31f3c)
