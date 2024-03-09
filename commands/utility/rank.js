@@ -42,6 +42,8 @@ module.exports = {
 				{ name: '24h', value: player.diff, inline: true },
 				{ name: 'Cashouts', value: cash, inline: true }];
 
+				console.log('Rank : ' + player.r.toString() + '\nLeague : ' + player.nameRank + '\nFame :' + player.f.toString() + '\n24h: ' + player.diff + '\nCashouts : ' + cash);
+
 				const embed = new EmbedBuilder()
 				.setColor(0xd31f3c)
 				.setTitle(getName(player))
