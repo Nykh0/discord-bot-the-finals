@@ -91,10 +91,9 @@ function getFame(player) {
 		case 20:
 			return "Diamond 1";
 		default:
-			return "Unknown Rank"
+			return "Unknown Rank";
 		}
 }
-
 
 function getName(player){
 	if (player.steam) {
